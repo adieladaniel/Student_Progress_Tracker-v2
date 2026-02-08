@@ -1,0 +1,561 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard - ILB Angels Trust</title>
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">ILB Angels Trust</span>
+                    <span class="logo-tagline">Student Portal</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="../index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero 
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <h1><i class="fas fa-user-circle"></i> Personal Dashboard</h1>
+            <p>Track student progress, attendance, and achievements</p>
+            <div class="hero-badge">
+                <i class="fas fa-calendar-check"></i>
+                <span id="currentDate"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selection Section 
+    <section class="selection-section" id="selectionSection">
+        <div class="container">
+            <div class="selection-card">
+                <h2><i class="fas fa-filter"></i> Select Student</h2>
+                <div class="selection-controls">
+                    <div class="control-group">
+                        <label for="branchSelect">
+                            <i class="fas fa-map-marker-alt"></i> Branch
+                        </label>
+                        <select id="branchSelect" class="select-input">
+                            <option value="">-- Select Branch --</option>
+                            <option value="Kothanur">Kothanur</option>
+                            <option value="Chellikere">Chellikere</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="classSelect">
+                            <i class="fas fa-school"></i> Class
+                        </label>
+                        <select id="classSelect" class="select-input" disabled>
+                            <option value="">-- Select Class --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Students Grid 
+            <div id="studentsGrid" class="students-grid" style="display: none;">
+                <h3 class="grid-title">Select a Student</h3>
+                <div id="studentsList" class="students-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section 
+    <section class="dashboard-section" id="dashboardSection" style="display: none;">
+        <div class="container">
+            <!-- Student Info Card 
+            <div class="student-info-card">
+                <div class="student-header">
+                    <div class="student-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="student-details">
+                        <h2 id="studentName">Student Name</h2>
+                        <div class="student-meta">
+                            <span><i class="fas fa-id-card"></i> Roll No: <strong id="studentRoll"></strong></span>
+                            <span><i class="fas fa-chalkboard"></i> Class: <strong id="studentClass"></strong></span>
+                            <span><i class="fas fa-map-marker-alt"></i> Branch: <strong id="studentBranch"></strong></span>
+                        </div>
+                    </div>
+                    <button class="btn-back" onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i> Back to Selection
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards 
+            <div class="stats-grid">
+                <div class="stat-card stat-present">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="presentCount">0</h3>
+                        <p>Days Present</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-absent">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="absentCount">0</h3>
+                        <p>Days Absent</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-total">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalDays">0</h3>
+                        <p>Total Days</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-percentage">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="attendancePercentage">0%</h3>
+                        <p>Attendance Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance History 
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-history"></i> Attendance History</h3>
+                    <div class="card-actions">
+                        <button class="btn-toggle active" data-view="list" onclick="toggleView('list')">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                        <button class="btn-toggle" data-view="calendar" onclick="toggleView('calendar')">
+                            <i class="fas fa-calendar"></i> Calendar
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="attendanceList" class="attendance-list"></div>
+                    <div id="attendanceCalendar" class="attendance-calendar" style="display: none;"></div>
+                </div>
+            </div>
+
+            <!-- Teacher Notes 
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-sticky-note"></i> Teacher Notes & Updates</h3>
+                    <button class="btn-primary" onclick="openNoteModal()">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="notesList" class="notes-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Note Modal 
+    <div class="modal-overlay" id="noteModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Add Teacher Note</h3>
+                <button class="modal-close" onclick="closeNoteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="noteForm" class="modal-body">
+                <div class="form-group">
+                    <label>Note Text</label>
+                    <textarea id="noteText" rows="4" placeholder="Enter note for parent..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload Images (Optional)</label>
+                    <input type="file" id="noteImages" accept="image/*" multiple>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeNoteModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification 
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/dashboard-script.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard - ILB Angels Trust</title>
+    <link rel="stylesheet" href="/css/dashboard-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">ILB Angels Trust</span>
+                    <span class="logo-tagline">Student Portal</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="/index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <h1><i class="fas fa-user-circle"></i> Personal Dashboard</h1>
+            <p>Track student progress, attendance, and achievements</p>
+            <div class="hero-badge">
+                <i class="fas fa-calendar-check"></i>
+                <span id="currentDate"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selection Section -->
+    <section class="selection-section" id="selectionSection">
+        <div class="container">
+            <div class="selection-card">
+                <h2><i class="fas fa-filter"></i> Select Student</h2>
+                <div class="selection-controls">
+                    <div class="control-group">
+                        <label for="branchSelect">
+                            <i class="fas fa-map-marker-alt"></i> Branch
+                        </label>
+                        <select id="branchSelect" class="select-input">
+                            <option value="">-- Select Branch --</option>
+                            <option value="Kothanur">Kothanur</option>
+                            <option value="Chellikere">Chellikere</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="classSelect">
+                            <i class="fas fa-school"></i> Class
+                        </label>
+                        <select id="classSelect" class="select-input" disabled>
+                            <option value="">-- Select Class --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Students Grid -->
+            <div id="studentsGrid" class="students-grid" style="display: none;">
+                <h3 class="grid-title">Select a Student</h3>
+                <div id="studentsList" class="students-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section" id="dashboardSection" style="display: none;">
+        <div class="container">
+            <!-- Student Info Card -->
+            <div class="student-info-card">
+                <div class="student-header">
+                    <div class="student-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="student-details">
+                        <h2 id="studentName">Student Name</h2>
+                        <div class="student-meta">
+                            <span><i class="fas fa-id-card"></i> Roll No: <strong id="studentRoll"></strong></span>
+                            <span><i class="fas fa-chalkboard"></i> Class: <strong id="studentClass"></strong></span>
+                            <span><i class="fas fa-map-marker-alt"></i> Branch: <strong id="studentBranch"></strong></span>
+                        </div>
+                    </div>
+                    <button class="btn-back" onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i> Back to Selection
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card stat-present">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="presentCount">0</h3>
+                        <p>Days Present</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-absent">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="absentCount">0</h3>
+                        <p>Days Absent</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-total">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalDays">0</h3>
+                        <p>Total Days</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-percentage">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="attendancePercentage">0%</h3>
+                        <p>Attendance Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance History -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-history"></i> Attendance History</h3>
+                    <div class="card-actions">
+                        <button class="btn-toggle active" data-view="list" onclick="toggleView('list')">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                        <button class="btn-toggle" data-view="calendar" onclick="toggleView('calendar')">
+                            <i class="fas fa-calendar"></i> Calendar
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="attendanceList" class="attendance-list"></div>
+                    <div id="attendanceCalendar" class="attendance-calendar" style="display: none;"></div>
+                </div>
+            </div>
+
+            <!-- Curriculum Progress -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-book-open"></i> Curriculum Progress</h3>
+                    <button class="btn-primary" onclick="openCurriculumModal()">
+                        <i class="fas fa-edit"></i> Update Progress
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="progress-summary">
+                        <div class="progress-chart-container">
+                            <canvas id="progressChart"></canvas>
+                            <div class="progress-center-text">
+                                <h2 id="progressPercentage">0%</h2>
+                                <p>Complete</p>
+                            </div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="progress-stat-item">
+                                <div class="progress-stat-icon completed">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="progress-stat-content">
+                                    <h4 id="completedTopics">0</h4>
+                                    <p>Topics Completed</p>
+                                </div>
+                            </div>
+                            <div class="progress-stat-item">
+                                <div class="progress-stat-icon incomplete">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="progress-stat-content">
+                                    <h4 id="incompleteTopics">0</h4>
+                                    <p>Topics Remaining</p>
+                                </div>
+                            </div>
+                            <div class="progress-stat-item">
+                                <div class="progress-stat-icon total">
+                                    <i class="fas fa-list"></i>
+                                </div>
+                                <div class="progress-stat-content">
+                                    <h4 id="totalTopics">0</h4>
+                                    <p>Total Topics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teacher Notes -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-sticky-note"></i> Teacher Notes & Updates</h3>
+                    <button class="btn-primary" onclick="openNoteModal()">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="notesList" class="notes-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Note Modal -->
+    <div class="modal-overlay" id="noteModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Add Teacher Note</h3>
+                <button class="modal-close" onclick="closeNoteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="noteForm" class="modal-body">
+                <div class="form-group">
+                    <label>Note Text</label>
+                    <textarea id="noteText" rows="4" placeholder="Enter note for parent..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload Images (Optional)</label>
+                    <input type="file" id="noteImages" accept="image/*" multiple>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeNoteModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Curriculum Progress Modal -->
+    <div class="modal-overlay" id="curriculumModal">
+        <div class="modal-box curriculum-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-book-open"></i> Update Curriculum Progress</h3>
+                <button class="modal-close" onclick="closeCurriculumModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="curriculum-info">
+                    <p><strong>Student:</strong> <span id="curriculumStudentName"></span></p>
+                    <p><strong>Class:</strong> <span id="curriculumClass"></span></p>
+                </div>
+                <form id="curriculumForm">
+                    <div id="curriculumWeeks" class="curriculum-weeks"></div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closeCurriculumModal()">Cancel</button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Save Progress
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <!-- Password Modal -->
+    <div class="modal-overlay" id="passwordModal">
+        <div class="modal-box password-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-lock"></i> Enter Password to Access Dashboard</h3>
+                <button class="modal-close" onclick="closePasswordModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="password-info">
+                    <div class="student-info-badge">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong id="passwordStudentName"></strong>
+                            <p id="passwordStudentMeta"></p>
+                        </div>
+                    </div>
+                    <div class="password-instructions">
+                        <p><i class="fas fa-info-circle"></i> Enter your student password or teacher password to continue</p>
+                    </div>
+                </div>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label for="dashboardPassword">
+                            <i class="fas fa-key"></i> Password
+                        </label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="dashboardPassword" 
+                                placeholder="Enter password"
+                                autocomplete="off"
+                                required
+                            >
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+                                <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                            </button>
+                        </div>
+                        <div class="password-hint" id="passwordHint"></div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closePasswordModal()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-unlock"></i> Access Dashboard
+                        </button>
+                    </div>
+                </form>
+                <div class="password-help">
+                    <p class="help-text">
+                        <i class="fas fa-question-circle"></i> 
+                        Parents: Use your unique student password<br>
+                        Teachers: Use the master teacher password
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="/js/dashboard-script.js"></script>
+</body>
+</html>

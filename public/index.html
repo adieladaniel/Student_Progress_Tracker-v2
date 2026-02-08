@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILB Angels Trust - Nurturing Young Minds</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Doodles Container -->
+    <div class="doodles-container">
+        <img src="/images/cloud.png" alt="" class="doodle doodle-sun">
+        <img src="/images/airplane.png" alt="" class="doodle doodle-airplane">
+        <img src="/images/sun.png" alt="" class="doodle doodle-star">
+        <img src="/images/star.png" alt="" class="doodle doodle-cloud">
+        <img src="/images/pencil.png" alt="" class="doodle doodle-pencil">
+        <img src="/images/book.png" alt="" class="doodle doodle-book">
+        <img src="/images/balloon.png" alt="" class="doodle doodle-balloon">
+        <img src="/images/rocket (2).png" alt="" class="doodle doodle-rocket">
+        <img src="/images/basketball.png" alt="" class="doodle doodle-flower">
+        <img src="/images/flower.png" alt="" class="doodle doodle-music">
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">ILB Angels Trust</span>
+                    <span class="logo-tagline">Nurturing Young Minds</span>
+                </div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#dashboard">Student Portal</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#alumni">Alumni</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#login" class="login-btn">Parent Login</a></li> -->
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+            <h1 class="hero-title">Welcome to ILB Angels Trust</h1>
+            <p class="hero-subtitle">Where Every Child's Journey Begins with Wonder & Learning</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('programs')">
+                    <i class="fas fa-book-reader"></i> Explore Programs
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('dashboard')">
+                    <i class="fas fa-user-circle"></i> Parent Dashboard
+                </button>
+            </div>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>250+</h3>
+                    <p>Happy Students</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>10+</h3>
+                    <p>Expert Teachers</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-award"></i>
+                    <h3>9+</h3>
+                    <p>Years Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose ILB Angels Trust?</h2>
+            <p class="section-subtitle">Comprehensive learning approach aligned with NEP guidelines</p>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Multi-Sensory Learning</h3>
+                    <p>Visual, auditory, kinesthetic, and tactile learning approaches tailored for every child</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>STEM Education</h3>
+                    <p>Hands-on science, technology, engineering, and math activities that spark curiosity</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Play-Based Learning</h3>
+                    <p>Learning through play with inquiry-based sessions for holistic development</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe Environment</h3>
+                    <p>Low child-to-teacher ratios ensuring personalized attention and safety</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Programs Section - 5 Cards Grid -->
+<section class="programs" id="programs">
+    <div class="container">
+        <h2 class="section-title">Our Programs</h2>
+        <p class="section-subtitle">Age-appropriate learning paths for every developmental stage</p>
+
+        <div class="programs-grid">
+            <!-- Card 1 - Day Care -->
+            <div class="program-card" data-aos="fade-up">
+                <!-- IMAGE ONLY INSIDE CARD -->
+                <div class="program-image-wrapper">
+                    <img src="/images/daycare.png" alt="Day care program" class="program-image">
+                </div>
+                <div class="program-body">
+                    <p class="age-range">Age: 1.6 - 2.6 Years</p>
+                    <p class="timing"><i class="far fa-clock"></i> 9:00 AM - 6:00 PM</p>
+                    <p class="ratio"><i class="fas fa-users"></i> 4:1 Ratio</p>
+                    <p class="description">
+                        Activities focused on exploring abilities and enhancing motor development in a nurturing atmosphere
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 - Playgroup -->
+            <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="program-image-wrapper">
+                    <img src="/images/pp1.jpg" alt="Playgroup program" class="program-image">
+                </div>
+                <div class="program-body">
+                    <p class="age-range">Age: 2 - 3 Years</p>
+                    <p class="timing"><i class="far fa-clock"></i> 9:00 AM - 12:30 PM</p>
+                    <p class="ratio"><i class="fas fa-users"></i> 10:1 Ratio</p>
+                    <p class="description">
+                        Inquiry-based sessions developing pre-writing and communication skills
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 - PP1 -->
+            <div class="program-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="program-image-wrapper">
+                    <img src="/images/pp1.jpg" alt="PP1 program" class="program-image">
+                </div>
+                <div class="program-body">
+                    <p class="age-range">Age: 3+ Years</p>
+                    <p class="timing"><i class="far fa-clock"></i> 8:00 AM - 2:00 PM</p>
+                    <p class="ratio"><i class="fas fa-users"></i> 10:1 Ratio</p>
+                    <p class="description">
+                        Play and learn method to develop literacy and numeracy skills
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4 - PP2 -->
+            <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="program-image-wrapper">
+                    <img src="/images/pp2.jpg" alt="PP2 program" class="program-image">
+                </div>
+                <div class="program-body">
+                    <p class="age-range">Age: 4+ Years</p>
+                    <p class="timing"><i class="far fa-clock"></i> 8:00 AM - 2:00 PM</p>
+                    <p class="ratio"><i class="fas fa-users"></i> 15:1 Ratio</p>
+                    <p class="description">
+                        Emphasis on literacy and numeracy with growing independence
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5 - PP3 -->
+            <div class="program-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="program-image-wrapper">
+                    <img src="/images/pp3.png" alt="PP3 program" class="program-image">
+                </div>
+                <div class="program-body">
+                    <p class="age-range">Age: 5+ Years</p>
+                    <p class="timing"><i class="far fa-clock"></i> 8:00 AM - 2:00 PM</p>
+                    <p class="ratio"><i class="fas fa-users"></i> 15:1 Ratio</p>
+                    <p class="description">
+                        Advanced literacy and numeracy skills with complete independence
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Portal Features Section -->
+<!-- <section class="portal-features" id="dashboard">
+    <div class="container">
+        <h2 class="section-title">Student & Parent Portal</h2>
+        <p class="section-subtitle">Stay connected with your child's educational journey</p>
+        <div class="portal-grid">
+            <!-- Real-Time Attendance card: wrap in <a> 
+            <a href="html/attendance-classes.html" class="portal-link-card">
+                <div class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Real-Time Attendance</h3>
+                    <p>Track daily attendance for LKG, UKG, and 1st grade students with instant notifications</p>
+                </div>
+            </a>
+
+            <!-- Other cards unchanged 
+            <div class="portal-card">
+                <div class="portal-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Personal Dashboard</h3>
+                <p>Individual student profiles with detailed progress tracking and achievements</p>
+            </div>
+            <div class="portal-card">
+                <div class="portal-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Achievements Gallery</h3>
+                <p>Audio, video, and photo notes celebrating your child's milestones</p>
+            </div>
+        </div>
+        <div class="portal-cta">
+            <button class="btn btn-primary btn-large">Access Portal <i class="fas fa-sign-in-alt"></i></button>
+        </div>
+    </div>
+</section> -->
+
+<!-- Portal Features Section -->
+<section class="portal-features" id="dashboard">
+    <div class="container">
+        <h2 class="section-title">Student & Parent Portal</h2>
+        <p class="section-subtitle">Stay connected with your child's educational journey</p>
+        <div class="portal-grid">
+            <!-- Real-Time Attendance card -->
+            <a href="/html/attendance-classes.html" class="portal-link-card">
+                <div class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Real-Time Attendance</h3>
+                    <p>Track daily attendance for LKG, UKG, and 1st grade students with instant notifications</p>
+                </div>
+            </a>
+
+            <!-- Personal Dashboard card - UPDATED -->
+            <a href="/html/personal-dashboard.html" class="portal-link-card">
+                <div class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Personal Dashboard</h3>
+                    <p>Individual student profiles with detailed progress tracking and achievements</p>
+                </div>
+            </a>
+
+            <!-- Achievements Gallery card -->
+            <div class="portal-card">
+                <div class="portal-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Achievements Gallery</h3>
+                <p>Audio, video, and photo notes celebrating your child's milestones</p>
+            </div>
+        </div>
+        <div class="portal-cta">
+            <a href="/html/personal-dashboard.html">
+                <button class="btn btn-primary btn-large">Access Portal <i class="fas fa-sign-in-alt"></i></button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Interactive Games Section -->
+    <!-- <section class="games-section" id="games">
+        <div class="container">
+            <h2 class="section-title">Interactive Learning Games</h2>
+            <p class="section-subtitle">Fun educational games to enhance learning at home</p>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3>Word Builder</h3>
+                    <p>Create words from letters and expand vocabulary</p>
+                    <button class="btn-play">Play Now <i class="fas fa-play"></i></button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <h3>Letter Match</h3>
+                    <p>Match uppercase and lowercase letters</p>
+                    <button class="btn-play">Play Now <i class="fas fa-play"></i></button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Phonics Fun</h3>
+                    <p>Learn letter sounds through interactive activities</p>
+                    <button class="btn-play">Play Now <i class="fas fa-play"></i></button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Number Quest</h3>
+                    <p>Simple math games for early learners</p>
+                    <button class="btn-play">Play Now <i class="fas fa-play"></i></button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <!-- Interactive Games Section -->
+    <section class="games-section" id="games">
+        <div class="container">
+            <h2 class="section-title">Interactive Learning Games</h2>
+            <p class="section-subtitle">Educational games suite for PP1, PP2, and PP3 students</p>
+            
+            <div class="games-grid">
+                <!-- Educational Suite - Single Entry Point -->
+                <div class="game-card game-card-featured">
+                    <div class="game-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Educational Games Suite</h3>
+                    <p>Complete collection of age-appropriate learning games</p>
+                    <div class="game-features">
+                        <span class="feature-badge">
+                            <i class="fas fa-star"></i> 15+ Games
+                        </span>
+                        <span class="feature-badge">
+                            <i class="fas fa-child"></i> Ages 3-6
+                        </span>
+                        <span class="feature-badge">
+                            <i class="fas fa-brain"></i> Multi-Skills
+                        </span>
+                    </div>
+                    <a href="/games/educational-suite/index.html" target="_blank" class="btn-play">
+                        Play Now <i class="fas fa-play"></i>
+                    </a>
+                </div>
+
+                <!-- Coming Soon Cards (Optional) -->
+                <div class="game-card game-card-disabled">
+                    <div class="game-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Science Explorer</h3>
+                    <p>Interactive science experiments</p>
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+
+                <div class="game-card game-card-disabled">
+                    <div class="game-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>World Adventure</h3>
+                    <p>Geography learning game</p>
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+
+                <div class="game-card game-card-disabled">
+                    <div class="game-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Music Maestro</h3>
+                    <p>Learn rhythm and melody</p>
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">Parenting Blog</h2>
+            <p class="section-subtitle">Expert advice and insights for modern parents</p>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Parenting Tips</span>
+                        <h3>Building Emotional Intelligence in Toddlers</h3>
+                        <p>Practical strategies to help your child understand and manage emotions from an early age...</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Education</span>
+                        <h3>The Importance of Play-Based Learning</h3>
+                        <p>Why play is crucial for cognitive development and how to incorporate it at home...</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Health</span>
+                        <h3>Nutrition for Growing Minds</h3>
+                        <p>Essential nutrients and meal ideas to support your child's brain development...</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="blog-cta">
+                <button class="btn btn-secondary">View All Articles <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section class="alumni-section" id="alumni">
+        <div class="container">
+            <h2 class="section-title">Our Alumni Network</h2>
+            <p class="section-subtitle">Stay connected with the ILB family</p>
+            <div class="alumni-content">
+                <div class="alumni-info">
+                    <h3>Join Our Growing Community</h3>
+                    <p>Our alumni network connects former students and parents, creating a supportive community that celebrates achievements and maintains lasting relationships.</p>
+                    <ul class="alumni-benefits">
+                        <li><i class="fas fa-check-circle"></i> Exclusive alumni events</li>
+                        <li><i class="fas fa-check-circle"></i> Mentorship opportunities</li>
+                        <li><i class="fas fa-check-circle"></i> Success stories and updates</li>
+                        <li><i class="fas fa-check-circle"></i> Networking with fellow alumni</li>
+                    </ul>
+                    <button class="btn btn-primary">Connect with Alumni <i class="fas fa-users"></i></button>
+                </div>
+                <div class="alumni-testimonials">
+                    <div class="testimonial-card">
+                        <p>"ILB Angels Trust gave my child the perfect foundation. The skills and values learned here continue to benefit her in higher education."</p>
+                        <div class="testimonial-author">
+                            <strong>— Priya Sharma</strong>
+                            <span>Parent (Alumni 2018)</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The multi-sensory approach and caring teachers made learning a joy. My son still talks about his wonderful experiences at ILB."</p>
+                        <div class="testimonial-author">
+                            <strong>— Rajesh Kumar</strong>
+                            <span>Parent (Alumni 2020)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>ILB Angels Trust<br>Kothanur/Chellikere<br>Bengaluru 560077</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+91 8660725604<br>Mon-Fri: 9AM - 3PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>ilbangelskothanur2024@gmail.com<br>admissions@ilbangels.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Program Interest</option>
+                        <option value="toddler">Day Care</option>
+                        <option value="playgroup">Playgroup</option>
+                        <option value="nursery">PP1</option>
+                        <option value="lkg">PP2</option>
+                        <option value="ukg">PP3</option>
+                    </select>
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> ILB Angels Trust</h3>
+                    <p>Nurturing young minds with experiential learning aligned with NEP guidelines. Building life skills and academic excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#dashboard">Student Portal</a></li>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#alumni">Alumni</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for parenting tips and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ILB Angels Trust. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

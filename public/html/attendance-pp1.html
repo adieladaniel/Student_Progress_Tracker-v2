@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP1 Attendance - ILB School</title>
+    <link rel="stylesheet" href="/css/attendance-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<!-- FIXED: Added data-class="PP1" attribute -->
+<body data-class="PP1">
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- FIXED: Proper path to parent folder -->
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Nurturing Minds</span>
+                    <span class="logo-tagline">PP1 Attendance</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- FIXED: Back button goes to class selection -->
+                <a href="/html/attendance-classes.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Back to Classes
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <h1><i class="fas fa-puzzle-piece"></i> PP1 Attendance</h1>
+            <p>Select the branch and mark absent students for today.</p>
+            <div class="hero-badge">
+                <i class="fas fa-calendar-check"></i>
+                <span>Today: <span id="todayDate"></span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="branch-selection">
+        <div class="container">
+            <div class="branch-selector-card">
+                <label for="branchSelect">
+                    <i class="fas fa-building"></i> Select Branch:
+                </label>
+                <select id="branchSelect" class="branch-dropdown">
+                    <option value="">-- Choose Branch --</option>
+                    <option value="Kothanur">Kothanur Branch</option>
+                    <option value="Chellikere">Chellikere Branch</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <main class="attendance-section" id="attendanceSection" style="display: none;">
+        <div class="container">
+            <form id="attendanceForm" class="attendance-card">
+                <div class="attendance-header-bar">
+                    <div>
+                        <h2><span id="selectedBranch"></span> - PP1 Students</h2>
+                        <p class="student-count">Total Students: <span id="studentCount">0</span></p>
+                    </div>
+                    <div class="legend">
+                        <span><span class="legend-box present"></span> Present (unchecked)</span>
+                        <span><span class="legend-box absent"></span> Absent (checked)</span>
+                    </div>
+                </div>
+
+                <ul class="student-list" id="studentList">
+                    <li class="loading-message">Please select a branch to load students...</li>
+                </ul>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="clearSelection()">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        Submit Attendance
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="absentModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fas fa-clipboard-check"></i> Attendance Summary</h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-info">
+                    <strong>Branch:</strong> <span id="modalBranch"></span><br>
+                    <strong>Class:</strong> PP1<br>
+                    <strong>Date:</strong> <span id="modalDate"></span>
+                </p>
+                <div class="absent-section">
+                    <h4>Absentees Today:</h4>
+                    <ul id="absentList" class="absent-list"></ul>
+                    <p class="modal-note" id="noAbsenteesNote"></p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="modalClose">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-primary" id="modalConfirm">
+                    <i class="fas fa-save"></i> Confirm &amp; Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- FIXED: Correct path to script -->
+    <script src="/js/attendance-script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP1 Attendance</title>
+    <link rel="stylesheet" href="../css/attendance-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-class="PP1">
+    <!-- Top Nav --
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Nurturing Minds</span>
+                    <span class="logo-tagline">PP1 Attendance</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="attendance-classes.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Back to Classes
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header --
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <h1><i class="fas fa-puzzle-piece"></i> PP1 Attendance</h1>
+            <p>Select the branch and mark absent students for today.</p>
+            <div class="hero-badge">
+                <i class="fas fa-calendar-check"></i>
+                <span>Today: <span id="todayDate"></span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Branch Selection -
+    <section class="branch-selection">
+        <div class="container">
+            <div class="branch-selector-card">
+                <label for="branchSelect">
+                    <i class="fas fa-building"></i> Select Branch:
+                </label>
+                <select id="branchSelect" class="branch-dropdown">
+                    <option value="">-- Choose Branch --</option>
+                    <option value="Kothanur">Kothanur Branch</option>
+                    <option value="Chellikere">Chellikere Branch</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attendance Form -
+    <main class="attendance-section" id="attendanceSection" style="display: none;">
+        <div class="container">
+            <form id="attendanceForm" class="attendance-card">
+                <div class="attendance-header-bar">
+                    <div>
+                        <h2><span id="selectedBranch"></span> - PP1 Students</h2>
+                        <p class="student-count">Total Students: <span id="studentCount">0</span></p>
+                    </div>
+                    <div class="legend">
+                        <span><span class="legend-box present"></span> Present (unchecked)</span>
+                        <span><span class="legend-box absent"></span> Absent (checked)</span>
+                    </div>
+                </div>
+
+                <ul class="student-list" id="studentList">
+                    <li class="loading-message">Please select a branch to load students...</li>
+                </ul>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="clearSelection()">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        Submit Attendance
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Modal for absentees confirmation -
+    <div class="modal-overlay" id="absentModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fas fa-clipboard-check"></i> Attendance Summary</h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-info">
+                    <strong>Branch:</strong> <span id="modalBranch"></span><br>
+                    <strong>Class:</strong> PP1<br>
+                    <strong>Date:</strong> <span id="modalDate"></span>
+                </p>
+                <div class="absent-section">
+                    <h4>Absentees Today:</h4>
+                    <ul id="absentList" class="absent-list"></ul>
+                    <p class="modal-note" id="noAbsenteesNote"></p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="modalClose">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn-primary" id="modalConfirm">
+                    <i class="fas fa-save"></i> Confirm &amp; Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification --
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/attendance-script.js"></script>
+</body>
+</html> -->

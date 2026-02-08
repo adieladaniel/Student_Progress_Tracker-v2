@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Early Years Educational Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#4F46E5',
+              'brand-green': '#10B981',
+              'brand-yellow': '#F59E0B',
+              'brand-red': '#EF4444',
+              'brand-pink': '#EC4899',
+              'brand-purple': '#8B5CF6',
+              'kid-bg': '#F0F9FF',
+            },
+            animation: {
+              'float': 'float 3s ease-in-out infinite',
+              'bounce-slow': 'bounce 2s 3', 
+              'wiggle': 'wiggle 1s ease-in-out 3',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Prevent pull-to-refresh on mobile */
+      body {
+        overscroll-behavior-y: contain;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "canvas-confetti": "https://aistudiocdn.com/canvas-confetti@^1.9.4"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/ilb-school/games/educational-suite/assets/index-C6JgOPHx.js"></script>
+  <link rel="modulepreload" crossorigin href="/ilb-school/games/educational-suite/assets/react-vendor-COd4auuD.js">
+  <link rel="modulepreload" crossorigin href="/ilb-school/games/educational-suite/assets/lucide-BSJdCEAd.js">
+</head>
+  <body class="bg-kid-bg text-gray-800 antialiased overflow-hidden">
+    <div id="root"></div>
+</body>
+</html>

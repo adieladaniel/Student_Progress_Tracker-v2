@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selection - Real-Time Attendance</title>
+    <link rel="stylesheet" href="/css/attendance-classes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- FIXED: Proper path to parent folder -->
+            <div class="logo" onclick="window.location.href='/index.html'">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Nurturing Minds</span>
+                    <span class="logo-tagline">Attendance Portal</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <!-- FIXED: Proper path to parent folder -->
+                <a href="/index.html" class="nav-link">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <h1>Real-Time Attendance</h1>
+            <p>Select a class to mark or view attendance for today.</p>
+            <div class="hero-badge">
+                <i class="fas fa-calendar-check"></i>
+                <span>Today: <span id="todayDate"></span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="classes-section">
+        <div class="container">
+            <h2 class="section-title">Choose a Class</h2>
+            <p class="section-subtitle">Pick one of the available groups to manage attendance.</p>
+
+            <div class="classes-grid">
+                <!-- Daycare Card -->
+                <a href="/html/attendance-daycare.html" class="class-card">
+                    <div class="class-icon class-icon-1">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Daycare</h3>
+                    <p>Full-day care and learning environment for toddlers.</p>
+                    <div class="class-meta">
+                        <span><i class="fas fa-users"></i> 10 students</span>
+                        <span><i class="fas fa-clock"></i> 9:00 AM – 6:00 PM</span>
+                    </div>
+                </a>
+
+                <!-- PP1 Card -->
+                <a href="/html/attendance-pp1.html" class="class-card">
+                    <div class="class-icon class-icon-2">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>PP1</h3>
+                    <p>Foundational pre-primary level focusing on early concepts.</p>
+                    <div class="class-meta">
+                        <span><i class="fas fa-users"></i> 18 students</span>
+                        <span><i class="fas fa-clock"></i> 8:00 AM – 2:00 PM</span>
+                    </div>
+                </a>
+
+                <!-- PP2 Card -->
+                <a href="/html/attendance-pp2.html" class="class-card">
+                    <div class="class-icon class-icon-3">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>PP2</h3>
+                    <p>Building literacy, numeracy and social skills through play.</p>
+                    <div class="class-meta">
+                        <span><i class="fas fa-users"></i> 27 students</span>
+                        <span><i class="fas fa-clock"></i> 8:00 AM – 2:00 PM</span>
+                    </div>
+                </a>
+
+                <!-- PP3 Card -->
+                <a href="/html/attendance-pp3.html" class="class-card">
+                    <div class="class-icon class-icon-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>PP3</h3>
+                    <p>Readiness for primary grades with structured activities.</p>
+                    <div class="class-meta">
+                        <span><i class="fas fa-users"></i> 21 students</span>
+                        <span><i class="fas fa-clock"></i> 8:00 AM – 2:00 PM</span>
+                    </div>
+                </a>
+            </div>
+
+            <section class="info-panel">
+                <h3>How this works</h3>
+                <ul>
+                    <li>Step 1: Select a class from the cards above.</li>
+                    <li>Step 2: Choose the branch (Kothanur or Chellikere).</li>
+                    <li>Step 3: Mark each student as Present or Absent.</li>
+                    <li>Step 4: Save attendance and sync with the database.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>Real-Time Attendance Portal • Built for kids, parents and teachers.</p>
+            <a href="/index.html">Back to main site</a>
+        </div>
+    </footer>
+
+    <script>
+        const todaySpan = document.getElementById('todayDate');
+        if (todaySpan) {
+            const today = new Date();
+            todaySpan.textContent = today.toLocaleDateString('en-IN', {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+    </script>
+</body>
+</html>
