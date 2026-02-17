@@ -17,5 +17,21 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+// GET classes by branch
+router.get("/classes/:branch", async (req, res) => {
+  const { branch } = req.params;
+
+  try {
+    const [rows] = await db.query(
+      "SELECT DISTINCT class FROM students WHERE branch = ?",
+      [branch]
+    );
+
+    res.json(rows.map(r => r.class));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 export default router;
