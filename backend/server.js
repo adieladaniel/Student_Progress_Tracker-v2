@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(express.json());
 
-// ✅ Serve entire public folder
+// Serve entire public folder
 app.use(express.static(path.join(__dirname, "../public")));
 
 // API Routes
@@ -30,10 +30,9 @@ app.use("/api/auth", authRoutes);
 // Games route
 app.use("/games", express.static(path.join(__dirname, "../public/games")));
 
-// const PORT = process.env.PORT || 3000;
+// IMPORTANT FOR RAILWAY
+const PORT = process.env.PORT || 3000;
 
-// app.listen(PORT, () => {
-//   console.log(`Backend running at http://localhost:${PORT}`);
-// });
-
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
